@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Primeiros Passos - Json2dash</title>
+
+    <!-- <script src="script.js" defer></script> -->
+</head>
+<body>
+    <header></header>
+    
+    <div class="container">
+
+        <div class="content">
+            
+            <h1><strong>Primeiros Passos com o Pacote Json2dash</strong></h1>
+            <hr>
+
+            <h2>O que é o pacote <strong>json2dash</strong>?</h2>
+
+            <p>O pacote desenvolvido pelo <strong>Projeto Plataforma Multi-Mapa PB</strong> busca eliminar parcialmente a necessidade de utilizar programação para a confecção de aplicações web, uma vez que o usuário enviará informações por meio de um arquivo de texto no formato JSON (<em>JavaScript Object Notation</em>). As informações fornecidas como entrada são convertidas de forma automática em uma aplicação Dash que pode ser publicada na Internet.</p>
+            <p>Ele é constituído por um conjunto de módulos, os quais englobam algumas bibliotecas existentes dentro da linguagem Python visando simplificar processos de programação e, principalmente, remover a necessidade de reescrever comandos comumente utilizados.</p>
+
+            <p>As principais dependências do pacote json2dash são listadas a seguir: Pandas, Folium e Dash.</p>
+
+            <div class="bibliotecas">
+                <a href="https://pandas.pydata.org/" target="_blank">
+                    <img src="images/pandas_logo.png" alt="Logo da Biblioteca Pandas">
+                </a>
+                <a href="https://python-visualization.github.io/folium/" target="_blank">
+                    <img src="images/folium_logo.png" alt="Logo da Biblioteca Folium">
+                </a>
+                <a href="https://dash.plotly.com/" target="_blank">
+                    <img src="images/dash_plolty_logo.jpeg" alt="Logo da Biblioteca Dash">
+                </a>
+            </div>
+
+            <h2>Informações Específicas do Pacote Json2dash</h2>
+
+            <table>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Autor</th>
+                    <th>Versão</th>
+                </tr>
+                <tr>
+                    <td>Criação de dashboards a partir de um arquivo de texto no formato JSON para visualização de dados georeferenciados</td>
+                    <td>CearDados</td>
+                    <td>0.0.1</td>
+                </tr>
+            </table>
+
+            <h3 style="text-align: center;">Dependências do pacote json2dash</h3>
+
+            <table>
+                <tr>
+                    <th>Bibliotecas</th>
+                    <th>bokeh</th>
+                    <th>branca</th>
+                    <th>dash</th>
+                    <th>folium</th>
+                    <th>pandas</th>
+                    <th>Shapely</th>
+                </tr>
+                <tr>
+                    <th>Versão</th>
+                    <td>2.2.3</td>
+                    <td>0.4.1</td>
+                    <td>1.16.2</td>
+                    <td>0.11.0</td>
+                    <td>1.1.3</td>
+                    <td>1.7.0</td>
+                </tr>
+            </table>
+
+            <h2>O que precisamos fazer para utilizar o pacote <strong>json2dash</strong>?</h2>
+            <p class="subtitle">Esses passos já possuem uma documentação disponivel no <a href="https://github.com/" target="_blank">GitHub Docs</a>.</p>
+            <ol>
+                <li>
+                    <a href="https://docs.github.com/pt/github/getting-started-with-github/create-a-repo" target="_blank">Criar um repositório privado</a>:
+                    <p> Para criar um repositório, será utilizada a própria plataforma do GitHub. Também é possível criar um novo repositório utilizando a interface gráfica para Git, o GitKraken, seguindo o procedimento disponivel <a href="https://support.gitkraken.com/working-with-repositories/open-clone-init/" target="_blank">aqui</a>.</p>
+                </li>
+                <li>
+                    <a href="https://docs.github.com/pt/github/authenticating-to-github/creating-a-personal-access-token" target="_blank">Criar um token para acesso pessoal</a>:
+                    <p> Para criar o seu <em>token</em>, será utilizada a própria plataforma do GitHub. Os <em>tokens</em> de acesso pessoal (PATs) são uma alternativa para o uso de senhas para autenticação no GitHub ao usar a API do GitHub ou a linha de comando. Para utilizar o pacote json2dash como dependência, é indispensáveis que seja feito um <em>fork</em> do repositório para o seu perfil e que utilize o <em>token</em> pessoal.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/CEARDados/mm" target="_blank">Estudar o código fonte</a>:
+                    <p> No repositório do projeto Plataforma Multi-Mapa PB, todas as informações sobre o pacote e alguns exemplos utilizando os componentes de gráfico, mapas, imagens, litas suspensas e markdown estão disponíveis.</p>
+                </li>
+            </ol>
+
+            <h2>Adicionando o pacote json2dash ao seu ambiente virtual conda</h2>
+            <!-- <p class="subtitle">Esses passos.</p> -->
+
+            <h4>Ative o seu ambiente conda</h4>
+            <p>Para isso, com o seu terminar aberto, execute a seguinte linha:</p>
+
+            <pre>
+                <code>conda activate [nomeDoSeuAmbiente]</nomeDoSeuAmbiente></code>
+            </pre>
+
+            <p>Logo após, você pode instalar o pacote de duas formas:</p>
+            <p class="note">Utilizando o instalador de pacotes pip diretamente.</p>
+            <pre>
+                <code>pip install git+https://SEUTOKEN@github.com/CEARDados/mm.git</code>
+            </pre>
+            <p class="note">Utilizando o instalador de pacotes pip para instalar as dependências armazendas em um arquivo de texto.</p>
+            <pre>
+                <code>pip install -r requirements.txt</code>
+            </pre>
+
+            <p>Para verificar se o ambiente foi criado corretamente, execute no seu terminal</p>
+            <pre>
+                <code>conda info --envs</code>
+                
+            </pre>
+
+            <h4>Algumas outras dependências necessitam serem instaladas durante o processo de deploy da aplicação na plataforma de hospedagem Heroku e para isso, crie um arquivo <code>requirements.txt</code> com o conteúdo abaixo dentro de seu repositório.</h4>
+            <pre>
+                <code>astroid==2.4.1
+attrs==19.3.0
+bokeh==2.2.3
+branca==0.4.1
+Brotli==1.0.7
+certifi==2020.6.20
+chardet==3.0.4
+click==7.1.2
+click-plugins==1.1.1
+cligj==0.5.0
+colorama==0.4.3
+dash==1.16.2
+dash-core-components==1.12.1
+dash-html-components==1.1.1
+dash-renderer==1.8.2
+dash-table==4.10.1
+Fiona==1.8.13
+Flask==1.1.2
+Flask-Compress==1.5.0
+folium==0.11.0
+future==0.18.2
+geopandas
+gunicorn==20.0.4
+idna==2.10
+isort==4.3.21
+itsdangerous==1.1.0
+Jinja2==2.11.2
+lazy-object-proxy==1.4.3
+MarkupSafe==1.1.1
+mccabe==0.6.1
+munch==2.5.0
+numpy
+packaging==20.7
+pandas==1.1.3
+Pillow==8.0.1
+plotly==4.14.3
+pyarrow==2.0.0
+pylint==2.5.2
+pyparsing==2.4.7
+python-dateutil==2.8.1
+pytz==2020.1
+PyYAML==5.3.1
+requests==2.24.0
+retrying==1.3.3
+scipy==1.6.1
+Shapely==1.7.0
+six
+toml==0.10.0
+tornado==6.1
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.25.9
+Werkzeug==1.0.1
+wincertstore==0.2
+wrapt==1.12.1
+xlrd==1.2.0</code>
+            </pre>
+
+            <p class="note"><strong>Obs.:</strong> Caso ocorra algum erro no processo de instalação do pacote <code>geopandas</code>, acesse o <a href="https://geopandas.org/getting_started/install.html">site</a> com o procedimento de instalação do pacote e todas suas dependências no ambiente virtual conda.</p>
+
+            
+            <h2>Projeto Básico com o Pacote Json2dash</h2>
+            <p class="subtitle">Para desenvolver esse primeiro dashboard sem a utilização de <em>callbacks</em>, será utilizado o <a href="https://code.visualstudio.com/" target="_blank">Visual Code Studio</a> como editor de texto. Além disso, somente os principais arquivos para o desenvolvimento de um dashboard vão ser apresentados, os que não tiverem suas alterações apresentadas podem facilmente ser encontrado no repositório do projeto.</p>
+
+            <h4>Arquivos necessários para o projeto:</h4>
+            <ul>
+                <li><code>configuration.json</code></li>
+                <li><code>app.py</code></li>
+                <li><code>index.py</code></li>
+                <li>
+                    <code>./apps/</code>
+                    <ul>
+                        <li><code>exemplo.json</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <code>./data/</code>
+                    <ul>
+                        <li><code>df_EstadualFinal.csv</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <code>./images/</code>
+                    <ul>
+                        <li><code>logo_ufpb.png</code></li>
+                        <li><code>logo_cear.png</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <code>./assets/</code>
+                    <ul>
+                        <li><code>default.css</code></li>
+                        <li><code>style.css</code></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p class="note">Acesse o repositório onde o projeto completo está armazenado clicando <a href="https://github.com/Miguel-mmf/first_steps_json2dash" target="_blank">aqui</a>.</p>
+
+            
+            <h3>Alterando o arquivo configuration.json</h3>
+            <p>Dentro de seu repositório, crie um arquivo de texto no formato JSON (<em>JavaScript Object Notation</em>) chamado de <code>configuration.json</code>. Após criar o arquivo, é necessário inserir as informações básicas disponíveis abaixo para a construção da aplicação.</p>
+
+            <img src="images/configuration.json" alt="" class="img-padrao-1">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/configuration.json" download="configuration.json">Download
+                </a>
+            </p>
+            <p class="note"><strong>Obs.:</strong> As informações acima são indispensáveis para que o pacote json2dash tenha conhecimento do nome da aplicação, qual a página principal que será renderizada no seu navegador.</p>
+
+
+            <h3>Alterando o arquivo app.py</h3>
+            <p>Crie um arquivo Python chamado de <code>app.py</code>. Esse arquivo será responsável por criar um objeto Dash e que também carregará as informações escritas pelo usurário no arquivo <code>configuration.json</code> na estrutura de um dicionário.</p>
+
+            <img src="./images/app_file.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/app.py" download="app.py">Download
+                </a>
+            </p>
+            <p class="note"><strong>Obs.:</strong> Nas duas primeiras linhas, é importada as bibliotecas necessárias para o bom funcionamento do código de app.py. As linhas 11-14 está criando o objeto dash a partir da função Dash do pacote dash. Na linha 16 altera o título da página que aparecerá no navegador para o título enviado pelo usuário em configuration.json.</p>
+
+            
+            <h3>Alterando o arquivo index.py</h3>
+            <p>Crie um arquivo Python chamado de <code>index.py</code>. Esse arquivo será responsável por criar o <em>layout</em>, realizar as alterações dinâmicas de layout e por onde é possível rodar a aplicação.</p>
+
+            <img src="./images/index_file.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/index.py" download="index.py">Download
+                </a>
+            </p>
+            <p class="note"><strong>Obs.:</strong> Para mais informações sobre a função <em>callback</em> acesse <a href="https://dash.plotly.com/basic-callbacks">Basic Dash Callbacks</a>.</p>
+
+
+            <h3>Alterando o arquivo apps/exemplo.json</h3>
+            <p>Para melhor organizar o projeto, crie uma pasta chamada apps onde será armazenado os arquivos .json e .py enviados pelo usuário contendo o <em>layout</em> e as funções de retorno, respectivamente. Para esse exemplo, será utilizado apenas um arquivo JSON e assim, um dashboard estático sem atualização dinâmica de <em>layout</em> vai ser desenvolvido.</p>
+            <p>Como arquivo aberto, vamos importar o <a href="https://joseitooliveira.github.io/j2d-schema/" target="_blank">esquema</a> que irá auxiliar na escrita do arquivo de texto uma vez que toda a estrutura aparecerá para o utilizador de forma inteligente.</p>
+
+            <img src="./images/exemplo_1.png" alt="" class="img-padrao-1">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+
+            <p>Após adicionar o esquema para formatar o arquivo, é preciso adicionar a chave <em>layout</em> para que seja possível construir a aplicação por meio de linhas e colunas.</p>
+
+            <img src="./images/exemplo_2.png" alt="" class="img-padrao-1">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+
+            <p>O <em>layout</em> da aplicação é dividido em linhas e colunas, então dentro da primeira linha, que pode possuir até 12 colunas (twelve columns), serão adicionadas apenas 3 colunas. Além disso, a largura de cada coluna é controlada pelo parâmetro <em>className</em>, o qual é utilizado para informar quantas colunas da grade estão disponíveis para aquele componente.</p>
+            <p><strong>Ex.:</strong> <em>six columns</em> é igual 48% da largura do <em>layout</em> e compreende 6 colunas das 12 disponíveis para aquela linha (row).</p>
+
+            <img src="./images/exemplo_3.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+
+            <p>Como é disponível apenas 12 colunas dentro da grade em cada linha do layout, então é aconselhavel ajustar os componentes para que eles preencham as 12. Por exemplo, na primeira linha, a primeira coluna com um componente img utilizava 2 colunas no parâmetro <em>className</em> e, assim, foram adicionadas mais dois componentes, um utilizando 8 colunas e outro com 2, totalizando 12 colunas da grade disponível para aquela linha.</p>
+
+            <img src="./images/exemplo_4.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+
+            <p class="note"><strong>Obs.:</strong> Para saber o que cada coluna representa, foi adicionada uma chave <em>obs</em> para indicar a sua posição no <em>layout</em>. Ela não altera nada na construção da aplicação, mas serve para guiar o usuário e qualquer outra pessoa que necessite estudar o código.</p>
+
+            <img src="./images/row_1.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Primeira linha da aplicação
+                </a>
+            </p>
+
+            <p>Agora, será criada mais uma linha contendo apenas uma coluna onde será inserido um gráfico com o componente <em>graph_v02</em> apresentando algumas das informações contidas no arquivo df_EstadualFinal.csv que está na pasta <em>data</em> (pasta criada para organização do projeto).</p>
+
+            <img src="./images/exemplo_5.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+
+            <p class="note"><strong>Obs.:</strong> Os parâmetros abaixo enviado pelo usuário é
+            <ul>
+                <li><code>id</code>: é do tipo <em>string</em>, obrigatório, e é utilizado como identificador único do componente.</li>
+                <li><code>file_path</code>: é do tipo <em>string</em>, obrigatório, e representa o caminho do arquivo (CSV, feather, JSON ...).</li>
+                <li><code>encoding</code>: é do tipo <em>string</em>, opcional com utf-8 como padrão, representa o Encoding utilizado para ler 'file_path'.</li>
+                <li><code>figure_type</code>: é do tipo <em>string</em>, obrigatório, o padrão é 'scatter-lines', repreenta o tipo do gráfico escolhido pelo usuário no formato tipo-modo.</li>
+                <li><code>data</code>: é do tipo <em>dict</em>, obrigatório, no formato apresentado acima.</li>
+                <li><code>layout</code>: é do tipo(dict), opcional - padrão({ }), (Dicionário conforma definido pelo Plotly.)</li>
+            </ul></p>
+
+            <img src="./images/row_2.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Segunda linha da aplicação
+                </a>
+            </p>
+
+            <p>Agora, será criada uma nova linha no <em>layout</em> onde uma mapa base será inserido utilizando o componenenet <em>map</em> e a localização inicial -7.129694 para latitude e -37.00 para longitude.</p>
+
+            <img src="./images/exemplo_6.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+            <p class="note"><strong>Obs.:</strong> O mapa esta utilizando uma única coluna com todas as colunas da grade.</p>
+
+            <img src="./images/row_3.1.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">terceira linha da aplicação
+                </a>
+            </p>
+
+
+            <p>Após isso, será inserida duas camadas de informações sobre o mapa, e para isso, deve-se utilizar a chave <em>layers</em> contendo a seguinte informação:</p>
+
+            <img src="./images/exemplo_7.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+            <img src="./images/row_3.2.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">terceira linha - Mapa Choropleth da variável Precipitação Média da Paraiba
+                </a>
+            </p>
+            <img src="./images/row_3.3.png" alt="" class="img-padrao-2">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">terceira linha - Mapa Choropleth da variável Temperatura Média 2m da Paraiba
+                </a>
+            </p>
+
+
+            <p>Por fim, será adicionado um rodapé contendo algumas informações em texto utilizando o componente <em>Markdown</em> do pacote json2dash.</p>
+
+            <img src="./images/row_4.png" alt="" class="img-padrao-1">
+            <p class="code-download">
+                <a href="./exemplo_dashboard/apps/exemplo.json" download="exemplo.json">Download
+                </a>
+            </p>
+
+            <p>Após o projeto está totalmente finalizado, com o seu ambiente virtual conda ainda ativado, é possível rodar em sua máquina fazendo:</p>
+            <pre>
+                <code>python index.py</code>
+            </pre>
+
+            <h3 style="text-align: center;">Acesse a aplicação hospedada no Heroku <a href="#">aqui</a>.</h3>
+            <p class="note"><strong>Obs.:</strong> Ainda não foi feito!</p>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <!-- <p>Projeto Plataforma Multi-Mapa PB</p>
+        <p>Universidade Federal da Paraíba (UFPB)</p>
+        <p>Centro de Energias Alternativas e Renováveis (CEAR)</p> -->
+    </footer>
+</body>
+</html>
