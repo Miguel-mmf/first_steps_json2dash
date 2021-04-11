@@ -18,7 +18,8 @@ body {
 }
 
 header {
-    background: no-repeat center/cover url("Sans_titre-21.jpg");
+    background: no-repeat center/cover;
+    background-image: url("Sans_titre-21.jpg");
     background-position: center center;
     height: calc(100vh - 300px);
     color: white;
@@ -27,7 +28,8 @@ header {
 }
 
 footer {
-    background: no-repeat center/cover url("Sans_titre-21.jpg");
+    background: no-repeat center/cover;
+    background-image: url("Sans_titre-21.jpg"); /* url("Sans_titre-21.jpg");*/
     background-position: bottom center;
     height: 150px;
     margin: 20px 0 0 0;
