@@ -1,20 +1,11 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-/* * {
-    width: 100%;
-} */
-
 
 body {
-    /* background-image: url('./../images/background.jpg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat; */
-    /* height: 100%; */
     min-height: 854px;
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
+    margin: auto;
 }
 
 header {
@@ -34,8 +25,6 @@ footer {
     height: 150px;
     margin: 20px 0 0 0;
     color: white;
-    /* position: absolute; */
-    /* bottom: 10px; */
 }
 
 footer p {
@@ -242,7 +231,6 @@ footer p {
 
 .container .content code {
     font-size: 16px;
-    /* font-family: 'Courier New', Courier, monospace; */
     font-weight: bold;
     color: rgb(33, 23, 73);
     margin: 20px;
